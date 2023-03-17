@@ -73,8 +73,8 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
                                                                                                                             //ile content type i belirtiyoruz. Bu sekilde bu datayi java dilinde
                                                                                                                             //gonderemeyiz, onu ceviren bir library e ihtiyacimiz var. Bunun icin
                                                                                                                             //pom.xml e json library i ekledik. Daha sonra gson library i ekledik.
-                                                                                                                            //Json -> De serilization (json objelerini java formatına cevirir)
-                                                                                                                            //Gson -> Serilization (java objelerini json formatina cevirir)
+                                                                                                                            //Gson i kullandik java objesini json a cevirmek icin serializer olarak.
+                                                                                                                            //Note: Sonra jackson i yukledik.
         response.prettyPrint();
 
         //Do assertion
@@ -87,5 +87,13 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
     }
 
     //Note: Put isleminde tum datalari guncellemezsen eger guncellemedigin kisimlarin null oldugunu gorursun, bunun icin patch ya da put isleminden hangisini yapacagina karar vermelisin.
+    //Ama bu Api in calisma sistemine gore degisiklik gosterebilir.(Her bir api in kendine ozgu sistemi vardir.)
+    /*
+    De-Serialization: Json datanın Java objesine çevrilmesidir.
+    Serialization: Java objesinin, Json dataya çevrilmesidir.
+    2 türlü De-Serialization yapacağız:
+        i) Gson: Google tarafından üretilmiş bir library.(as() method u ile yapılan çeviriler arka planda Gson'ı ve Jackson'ı kullanıyor. Gson objesi kullanarak da de-serialization yapacağız.)
+        ii) Object Mapper: En popüleri(Object Mapper+Pojo Class(Plain Old Java Object))
+    */
 
 }
