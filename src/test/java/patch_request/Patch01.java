@@ -52,7 +52,7 @@ public class Patch01 extends JsonPlaceHolderBaseUrl {
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.get("title"), actualData.get("title"));
         assertEquals(10, actualData.get("userId"));
-        assertEquals(true, actualData.get("completed")); //obje oldugu icin simply assertion onermiyor
+        assertEquals(true, actualData.get("completed")); //obje oldugu icin simply assertion onermiyor. Object class içinde equals() diye bir method var. Obje içindeki değeri kendi türünden datayla karşılaştırabiliyor.
         assertTrue((boolean) actualData.get("completed"));
     }
 

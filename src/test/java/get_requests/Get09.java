@@ -63,7 +63,8 @@ public class Get09 extends RestfulBookerHerOkuAppBaseUrl {
         assertEquals(expectedData.get("lastname"), actualData.get("lastname"));
         assertEquals(expectedData.get("totalprice"), actualData.get("totalprice"));
         assertEquals(expectedData.get("depositpaid"), actualData.get("depositpaid"));
-        assertEquals(bookingDatesMap.get("checkin"), ((Map)actualData.get("bookingdates")).get("checkin"));
+        assertEquals(bookingDatesMap.get("checkin"), ((Map)actualData.get("bookingdates")).get("checkin")); //assertEquals() methodu String ve Objeyi karşılaştırabiliyor.Bu gecer mesela;
+                                                                                                            //Object obj = "abc"; String str = "abc"; assertEquals(str, obj );
         assertEquals(bookingDatesMap.get("checkout"), ((Map)actualData.get("bookingdates")).get("checkout"));
         assertEquals(expectedData.get("additionalneeds"), actualData.get("additionalneeds"));
     }
