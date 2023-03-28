@@ -11,7 +11,7 @@ import util.ObjectMapperUtils;
 import static herokuapp_smoketest.S01_Post.bookingId;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-import static util.AuthenticationHerOkuApp.generateToken;
+import static util.AuthenticationHerOkuApp.generateTokenHerOkuApp;
 
 public class S02_Put extends RestfulBookerHerOkuAppBaseUrl {
 
@@ -57,7 +57,7 @@ public class S02_Put extends RestfulBookerHerOkuAppBaseUrl {
         //Send the request and get the response
         Response response = given().spec(spec).when().
                             contentType(ContentType.JSON).
-                            header("Cookie", "token=" + generateToken()).
+                            header("Cookie", "token=" + generateTokenHerOkuApp()).
                             body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
 

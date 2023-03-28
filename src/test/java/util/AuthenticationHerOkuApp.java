@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class AuthenticationHerOkuApp {
 
-    public static String generateToken(){
+    public static String generateTokenHerOkuApp(){
         String url = "https://restful-booker.herokuapp.com/auth";
         Map<String, String> tokenBody = new HashMap<>();
         tokenBody.put("username", "admin");

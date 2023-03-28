@@ -7,7 +7,7 @@ import org.junit.Test;
 import static herokuapp_smoketest.S01_Post.bookingId;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-import static util.AuthenticationHerOkuApp.generateToken;
+import static util.AuthenticationHerOkuApp.generateTokenHerOkuApp;
 
 public class S03_Delete extends RestfulBookerHerOkuAppBaseUrl {
 
@@ -27,7 +27,7 @@ public class S03_Delete extends RestfulBookerHerOkuAppBaseUrl {
         String expectedData = "Created";
 
         //Send the request and get the response
-        Response response = given().spec(spec).header("Cookie", "token=" + generateToken()).delete("/{first}/{second}");
+        Response response = given().spec(spec).header("Cookie", "token=" + generateTokenHerOkuApp()).delete("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion
