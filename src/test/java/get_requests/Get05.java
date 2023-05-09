@@ -30,7 +30,7 @@ public class Get05 extends RestfulBookerHerOkuAppBaseUrl {
         //Set the expected data
 
         //Send the request get the response
-        Response response = given().when().spec(spec).get("/{first}");
+        Response response = given(spec).get("/{first}");
         response.prettyPrint();
 
         //Do assertion

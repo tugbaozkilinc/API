@@ -35,7 +35,7 @@ public class RequestResponse {
         System.out.println("Status code: " + response.statusCode());
 
         //Content type nasil yazdirilir?
-        System.out.println("Content type: " + response.contentType()); //Response in icinde headers da var
+        System.out.println("Content type: " + response.contentType());
 
         //Status line nasil yazdirilir?
         System.out.println("Status line: " + response.statusLine());
@@ -49,7 +49,7 @@ public class RequestResponse {
         System.out.println(response.headers());
 
         //Time nasil yazdirilir?
-        System.out.println("Time: " +response.getTime());
+        System.out.println("Time: " + response.getTime());
     }
 
 }

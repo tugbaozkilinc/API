@@ -30,20 +30,19 @@ public class Get03 extends JsonPlaceHolderBaseUrl {
     @Test
     public void test() {
         //Set the url
-        spec.pathParams("first", "todos", "second", "23");
+        spec.pathParams("first", "todos", "second", 23);
 
         //Set the expected data
 
         //Send the request get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion (Oncelikle status code dogrulanir)
-        response.then().statusCode(200).contentType(ContentType.JSON).body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"), "completed",
-                 equalTo(false), "userId", equalTo(2)); //HamcrestMatchers. Bu şekilde tek body de çoklu assertion yaparak bu body i soft assertion a cevirdik.
-        //Tek body() method'u icerisinde coklu assertion yaparak soft assertion olusturabilirsiniz. Bu sekilde Fail durumunda body() icinde Java calismayi durdurmaz.
+        response.then().statusCode(200).contentType(ContentType.JSON).body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
+                "completed", equalTo(false), "userId", equalTo(2));
+        //Tek body() method'u icerisinde coklu assertion yaparak soft assertion olusturabilirsin. Bu sekilde fail durumunda body() icinde Java calismayi durdurmaz.
         //Coklu body() method'u ile assertion yapildiginda fail durumunda Java bir sonraki body() method'u oncesinde calismayi durdurur.
-        //Note: ContentType.JSON karsiya gonderilecek olan datanın type i
     }
 
 }

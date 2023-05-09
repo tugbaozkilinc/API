@@ -32,22 +32,22 @@ public class Get04 extends JsonPlaceHolderBaseUrl {
     @Test
     public void test() {
         //Set the url
-        spec.pathParams("first", "todos"); //pathParams(); cok parametre varsa kullanilir.
+        spec.pathParam("first", "todos");
 
         //Set the expected data
 
         //Send the request get the response
-        Response response = given().when().spec(spec).get("/{first}"); //Accept type is “application/json” /accept(ContentType.JSON) dogrulama islemini burda yapiyorduk(test case de boyle
-                                                                          //yani when kısmında(action kisminda) yapmamiz istendigi icin) artik RequestSpecification da yapiyoruz, code tekrarından kurtulmak adina
+        Response response = given(spec).get("/{first}"); //Accept type is “application/json” /accept(ContentType.JSON) dogrulama islemini burda yapiyorduk(test case de boyle yani when
+                                                              //kısmında(action kisminda) yapmamiz istendigi icin) artik RequestSpecification da yapiyoruz, code tekrarından kurtulmak adina
         response.prettyPrint();
 
         //Do assertion
         response.then().statusCode(200).contentType(ContentType.JSON).body("id", hasSize(200), "title", hasItem("quis eius est sint explicabo"),
-                 "userId", hasItems(2, 7, 9));
+                                                                                                 "userId", hasItems(2, 7, 9));
     }
 
-    //hasSize() ==> size() methodu gibi eleman sayısını assert eder.
-    //hasItem() ==> contains() methodu gibi objenin içerilip içerilmediğini assert eder.
-    //hasItems() ==> containsAll() methodu gibi birden fazla objenin içerilip içerilmediğini assert eder.
+    //hasSize() -> size() methodu gibi eleman sayısını assert eder.
+    //hasItem() -> contains() methodu gibi objenin içerilip içerilmediğini assert eder.
+    //hasItems() -> containsAll() methodu gibi birden fazla objenin içerilip içerilmediğini assert eder.
 
 }

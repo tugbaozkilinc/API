@@ -33,7 +33,7 @@ public class Post05ObjectMapper_Map extends JsonPlaceHolderBaseUrl {
                                     "completed": false,
                                     "id": 201
                                     }
-     */
+    */
 
     @Test
     public void test() throws IOException {
@@ -46,12 +46,11 @@ public class Post05ObjectMapper_Map extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).body(expectedData).post("/{first}");
+        Response response = given(spec).body(expectedData).post("/{first}");
         response.prettyPrint();
 
         //Do assertion
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> actualData = objectMapper.readValue(response.asString(), HashMap.class);
+        Map<String, Object> actualData = new ObjectMapper().readValue(response.asString(), HashMap.class);
         System.out.println("Actual Data: " + actualData);
         assertEquals(201, response.getStatusCode());
         assertEquals(expectedData.get("userId"), actualData.get("userId"));

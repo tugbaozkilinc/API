@@ -2,7 +2,7 @@ package pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true) //codehaus tan import et.
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DummyRestApiPojo {
 
     private String status;

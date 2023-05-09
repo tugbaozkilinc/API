@@ -23,12 +23,12 @@ public class ClassWork04 extends RestfulBookerHerOkuAppBaseUrl {
     @Test
     public void test() {
         //Set the url
-        spec.pathParams("first", "booking").queryParams("firstname", "John", "lastname", "Smith");
+        spec.pathParam("first", "booking").queryParams("firstname", "John", "lastname", "Smith");
 
         //Set the expected data
 
         //Send the request get the response
-        Response response = given().when().spec(spec).get("/{first}");
+        Response response = given(spec).get("/{first}");
         response.prettyPrint();
 
         //Do assertion

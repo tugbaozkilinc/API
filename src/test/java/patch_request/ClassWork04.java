@@ -44,7 +44,7 @@ public class ClassWork04 extends RestfulBookerHerOkuAppBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given(spec).when().get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

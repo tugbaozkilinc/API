@@ -55,10 +55,7 @@ public class S02_Put extends RestfulBookerHerOkuAppBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).when().
-                            contentType(ContentType.JSON).
-                            header("Cookie", "token=" + generateTokenHerOkuApp()).
-                            body(expectedData).put("/{first}/{second}");
+        Response response = given(spec).body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

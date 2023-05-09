@@ -43,16 +43,16 @@ public class Get09 extends RestfulBookerHerOkuAppBaseUrl {
         bookingDatesMap.put("checkin", "2018-01-01");
         bookingDatesMap.put("checkout", "2019-01-01");
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("firstname", "John");
-        expectedData.put("lastname", "Smith");
+        expectedData.put("firstname", "Josh");
+        expectedData.put("lastname", "Allen");
         expectedData.put("totalprice", 111);
         expectedData.put("depositpaid", true);
         expectedData.put("bookingdates", bookingDatesMap);
-        expectedData.put("additionalneeds", "Breakfast");
+        expectedData.put("additionalneeds", "super bowls");
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion (Note: Map ile degiskenlerimizi onceden hazirlamamizin sebebi assertion da degisken kullanilmamasi, boyle bir kultur var)
@@ -64,7 +64,7 @@ public class Get09 extends RestfulBookerHerOkuAppBaseUrl {
         assertEquals(expectedData.get("totalprice"), actualData.get("totalprice"));
         assertEquals(expectedData.get("depositpaid"), actualData.get("depositpaid"));
         assertEquals(bookingDatesMap.get("checkin"), ((Map)actualData.get("bookingdates")).get("checkin")); //assertEquals() methodu String ve Objeyi karşılaştırabiliyor.Bu gecer mesela;
-                                                                                                            //Object obj = "abc"; String str = "abc"; assertEquals(str, obj );
+                                                                                                            //Object obj = "abc"; String str = "abc"; assertEquals(str, obj);
         assertEquals(bookingDatesMap.get("checkout"), ((Map)actualData.get("bookingdates")).get("checkout"));
         assertEquals(expectedData.get("additionalneeds"), actualData.get("additionalneeds"));
     }
@@ -81,7 +81,7 @@ public class Get09 extends RestfulBookerHerOkuAppBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

@@ -3,7 +3,6 @@ package post_requests;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -35,46 +34,25 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
                                     }
     */
 
-    @Test
-    public void name() {
-        spec.pathParams("first", "todos");
-        Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("userId", 55.0);
-        expectedData.put("title", "Tidy your room");
-        expectedData.put("completed", false);
-        Response response = given().when().spec(spec).body(expectedData).contentType(ContentType.JSON).post("/{first}");
-        response.prettyPrint();
-        response.then().statusCode(201);
-        Map<String, Object> actualData = response.as(HashMap.class);
-        assertEquals(expectedData.get("userId"), actualData.get("userId"));
-        assertEquals(expectedData.get("title"), actualData.get("title"));
-        assertEquals(expectedData.get("completed"), actualData.get("completed"));
-    }
-
-    @Test //JUnit ten import et yoksa calismaz
+    @Test //JUnit ten import et yoksa calismaz, cunku @Before method u Junit ten import ettik
     public void test() {
         //Set the url
         spec.pathParam("first", "todos");
 
         //Set the expected data --> Payload
-        //{
-        //       "userId": 55,
-        //       "title": "Tidy your room",
-        //       "completed": false
-        //}
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("userId", 55.0);
+        expectedData.put("userId", 55);
         expectedData.put("title", "Tidy your room");
         expectedData.put("completed", false);
         System.out.println("ExpectedData: " + expectedData);
 
         //Send the request get the response
-        Response response = given().when().spec(spec).contentType(ContentType.JSON).body(expectedData).post("/{first}"); //Bu body gonderecegimiz datayi iceriyor, contentType(ContentType.JSON)
-                                                                                                                            //ile content type i belirtiyoruz. Bu sekilde bu datayi java dilinde
-                                                                                                                            //gonderemeyiz, onu ceviren bir library e ihtiyacimiz var. Bunun icin
-                                                                                                                            //pom.xml e json library i ekledik. Daha sonra gson library i ekledik.
-                                                                                                                            //Gson i kullandik java objesini json a cevirmek icin serializer olarak.
-                                                                                                                            //Note: Sonra jackson i yukledik.
+        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).post("/{first}"); //Bu body gonderecegimiz datayi iceriyor, contentType(ContentType.JSON)
+                                                                                                                 //ile content type i belirtiyoruz. Bu sekilde bu datayi java dilinde
+                                                                                                                 //gonderemeyiz, onu ceviren bir library e ihtiyacimiz var. Bunun icin
+                                                                                                                 //pom.xml e json library i ekledik. Daha sonra gson library i ekledik.
+                                                                                                                 //Gson i java objesini json a cevirmek icin serializer olarak kullandik.
+                                                                                                                 //Note: Sonra jackson i ekledik.
         response.prettyPrint();
 
         //Do assertion
@@ -93,7 +71,7 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
     Serialization: Java objesinin, Json dataya çevrilmesidir.
     2 türlü De-Serialization yapacağız:
         i) Gson: Google tarafından üretilmiş bir library.(as() method u ile yapılan çeviriler arka planda Gson'ı ve Jackson'ı kullanıyor. Gson objesi kullanarak da de-serialization yapacağız.)
-        ii) Object Mapper: En popüleri(Object Mapper+Pojo Class(Plain Old Java Object))
+        ii) Object Mapper: En popüleri(Object Mapper + Pojo Class(Plain Old Java Object))
     */
 
 }

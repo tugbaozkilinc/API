@@ -36,18 +36,20 @@ public class Get12 extends RestfulBookerHerOkuAppBaseUrl {
     @Test
     public void test() {
         //Set the url
-        spec.pathParams("first", "booking", "second", 535);
+        spec.pathParams("first", "booking", "second", 392);
 
         //Set the expected data
         RestfulBookerHerOkuAppBookingDatesPojo object = new RestfulBookerHerOkuAppBookingDatesPojo("2018-01-01", "2019-01-01");
         RestfulBookerHerOkuAppPojo expectedData = new RestfulBookerHerOkuAppPojo("John", "Smith", 111, true, object, "Breakfast");
+        System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion
         RestfulBookerHerOkuAppPojo actualData = response.as(RestfulBookerHerOkuAppPojo.class);
+        System.out.println("Actual Data: " + expectedData);
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getFirstname(), actualData.getFirstname());
         assertEquals(expectedData.getLastname(), actualData.getLastname());

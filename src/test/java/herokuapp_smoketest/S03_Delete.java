@@ -27,7 +27,7 @@ public class S03_Delete extends RestfulBookerHerOkuAppBaseUrl {
         String expectedData = "Created";
 
         //Send the request and get the response
-        Response response = given().spec(spec).header("Cookie", "token=" + generateTokenHerOkuApp()).delete("/{first}/{second}");
+        Response response = given(spec).header("Cookie", "token=" + generateTokenHerOkuApp()).delete("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

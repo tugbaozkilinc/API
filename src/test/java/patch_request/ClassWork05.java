@@ -19,8 +19,8 @@ public class ClassWork05 extends DummyRestApiBaseUrl {
        Given URL: https://dummy.restapiexample.com/api/v1/employees
        When User sends GET Request
        Then User asserts i) Status code is 200
-       And User asserts ii) There are 24 employees (HamcrestMatcher kullanarak 24 employees olduğunu doğrulayınız)
-       And User asserts iii) "Tiger Nixon" and "Garrett Winters" are among the employees (HamcrestMatcher kullanarak "Tiger Nixon" ve "Garrett Winters"'ın employees arasında olduğunu doğrulayınız')
+       And User asserts ii) There are 24 employees (hamcrest.Matchers kullanarak 24 employees olduğunu doğrulayınız)
+       And User asserts iii) "Tiger Nixon" and "Garrett Winters" are among the employees (hamcrest.Matchers kullanarak "Tiger Nixon" ve "Garrett Winters"'ın employees arasında olduğunu doğrulayınız')
        And User asserts iv) The greatest age is 66
        And User asserts v) The name of the lowest age is "Tatyana Fitzpatrick"
        And User asserts vi) Total salary of all employees is 6,644,770

@@ -58,7 +58,7 @@ public class Post04 extends RestfulBookerHerOkuAppBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).body(expectedData).post("/{first}");
+        Response response = given(spec).body(expectedData).post("/{first}");
         response.prettyPrint();
 
         //Do assertion

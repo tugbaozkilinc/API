@@ -49,7 +49,7 @@ public class Put02 extends DummyRestApiBaseUrl {
         DummyRestApiPojo expectedBody = new DummyRestApiPojo("success", expectedData, "Successfully! Record has been updated.");
 
         //Send the request and get the response
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
+        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

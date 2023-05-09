@@ -47,7 +47,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().when().spec(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
+        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
         Map<String, Object> actualData = response.as(HashMap.class);
         System.out.println("Actual data: " + actualData);
@@ -70,7 +70,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().when().spec(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
+        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
         Map<String, Object> actualData = response.as(HashMap.class);
         System.out.println("Actual data: " + actualData);

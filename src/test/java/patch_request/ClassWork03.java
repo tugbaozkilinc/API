@@ -82,7 +82,7 @@ public class ClassWork03 extends GmiBankBaseUrl {
         System.out.println("ExpectedData: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).when().body(expectedData).headers("Authorization", "Bearer " + generateTokenGmi()).post("/{first}/{second}");
+        Response response = given(spec).body(expectedData).post("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

@@ -39,7 +39,7 @@ public class Delete01 extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        Map<String, String> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class);
+        Map<String, String> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class); //import org.codehaus.jackson.map.ObjectMapper;
         System.out.println("Actual Data: " + actualData);
         assertEquals(200, response.statusCode());
         //1. yol:
@@ -49,8 +49,16 @@ public class Delete01 extends JsonPlaceHolderBaseUrl {
         //3. yol:
         assertEquals(0, actualData.size());
         //4. yol:
-        String actual = response.asString();
-        assertEquals(2, actual.length());
+        assertEquals(2, response.asString().length());
     }
+
+    //To convert Java object to Json file: Serialization
+    //To convert Json file to Java object: De-Serialization
+    //new ObjectMapper().readValue(response.asString(), HashMap.class/Pojo.class);
+    //"ObjectMapper" class i, Jackson kütüphanesi tarafından sağlanan bir class tır ve Java objelerini JSON formatına ve JSON formatındaki verileri Java objelerine dönüştürmek için kullanılır.
+    //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+    //<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+    //<!-- https://mvnrepository.com/artifact/org.json/json --> "org.json" grubu altındaki "json" kütüphanesi, JSON verileriyle çalışırken kullanılan bir Java kütüphanesidir.
+    //http://www.JSON.org/ The files in this package implement JSON decoders in Java
 
 }

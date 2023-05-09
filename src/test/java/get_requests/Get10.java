@@ -46,7 +46,7 @@ public class Get10 extends GoRestBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the data and get the response
-        Response response = given().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

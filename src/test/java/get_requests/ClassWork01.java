@@ -30,7 +30,7 @@ public class ClassWork01 extends RegresInApiBaseUrl {
         //Set the expected data
 
         //Send the request and get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do Assertion

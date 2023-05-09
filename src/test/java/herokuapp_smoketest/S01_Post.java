@@ -60,12 +60,13 @@ public class S01_Post extends RestfulBookerHerOkuAppBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).when().body(expectedData).post("/{first}");
+        Response response = given(spec).body(expectedData).post("/{first}");
         response.prettyPrint();
 
         //Do assertion
         RestfulBookerHerOkuAppResponsePojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), RestfulBookerHerOkuAppResponsePojo.class);
         System.out.println("Actual Data: " + actualData);
+        bookingId = actualData.getBookingid();
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getFirstname(), actualData.getBooking().getFirstname());
         assertEquals(expectedData.getLastname(), actualData.getBooking().getLastname());
@@ -74,7 +75,6 @@ public class S01_Post extends RestfulBookerHerOkuAppBaseUrl {
         assertEquals(object.getCheckin(), actualData.getBooking().getBookingdates().getCheckin());
         assertEquals(object.getCheckout(), actualData.getBooking().getBookingdates().getCheckout());
         assertEquals(expectedData.getAdditionalneeds(), actualData.getBooking().getAdditionalneeds());
-        bookingId = actualData.getBookingid();
     }
 
 }

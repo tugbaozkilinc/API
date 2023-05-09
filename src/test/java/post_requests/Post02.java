@@ -2,7 +2,6 @@ package post_requests;
 
 import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
-import org.junit.Ignore;
 import org.junit.Test;
 import test_data.HerOkuAppTestData;
 
@@ -46,7 +45,7 @@ public class Post02 extends RestfulBookerHerOkuAppBaseUrl {
                                              }
     */
 
-    @Test @Ignore
+    @Test
     public void test() {
         //Set the url
         spec.pathParam("first", "booking");
@@ -58,7 +57,7 @@ public class Post02 extends RestfulBookerHerOkuAppBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).body(expectedData).post("/{first}");
+        Response response = given(spec).body(expectedData).post("/{first}");
         response.prettyPrint();
 
         //Do assertion

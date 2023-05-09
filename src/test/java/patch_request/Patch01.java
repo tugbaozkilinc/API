@@ -43,7 +43,7 @@ public class Patch01 extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).body(expectedData).patch("/{first}/{second}");
+        Response response = given(spec).body(expectedData).patch("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

@@ -9,7 +9,6 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class ClassWork01 extends RegresInApiBaseUrl {
 
@@ -35,7 +34,7 @@ public class ClassWork01 extends RegresInApiBaseUrl {
         //Set the expected data
 
         //Send the request and get the expected data
-        Response response = given().spec(spec).get("/{first}");
+        Response response = given(spec).get("/{first}");
         response.prettyPrint();
 
         //Do assertion

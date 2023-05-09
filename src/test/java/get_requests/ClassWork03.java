@@ -37,12 +37,13 @@ public class ClassWork03 extends RegresInApiBaseUrl {
         //Set the expected data
 
         //Send the request get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion
-        response.then().statusCode(200).contentType(ContentType.JSON).body("data.email", equalTo("janet.weaver@reqres.in"), "data.first_name", equalTo("Janet"),
-                 "data.last_name", equalTo("Weaver"), "support.text", equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+        response.then().statusCode(200).contentType(ContentType.JSON).body("data.email", equalTo("janet.weaver@reqres.in"),
+                "data.first_name", equalTo("Janet"), "data.last_name", equalTo("Weaver"), "support.text",
+                equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
     }
 
 }

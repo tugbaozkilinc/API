@@ -37,11 +37,11 @@ public class Post03 extends JsonPlaceHolderBaseUrl {
         spec.pathParam("first", "todos");
 
         //Set the expected data
-        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false); //obje olusturuyoruz
+        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false);
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).body(expectedData).post("/{first}");
+        Response response = given(spec).body(expectedData).post("/{first}");
         response.prettyPrint();
 
         //Do assertion

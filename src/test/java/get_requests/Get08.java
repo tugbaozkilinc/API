@@ -47,11 +47,12 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion
         Map<String, Object> actualData = response.as(HashMap.class);
+        //Map<String, Object> actualData = new ObjectMapper().readValue(response.asString(), HashMap.class);
         System.out.println("Actual Data: " + actualData);
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.get("userId"), actualData.get("userId"));
@@ -59,9 +60,9 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedData.get("completed"), actualData.get("completed"));
         assertEquals(expectedData.get("id"), actualData.get("id"));
         //And header "Via" is "1.1 vegur"
-        assertEquals(expectedData.get("Via"), response.header("Via"));
+        assertEquals(expectedData.get("Via"), response.getHeader("Via"));
         //And header "Server" is "cloudflare"
-        assertEquals(expectedData.get("Server"), response.header("Server"));
+        assertEquals(expectedData.get("Server"), response.getHeader("Server"));
     }
 
 }
