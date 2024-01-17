@@ -14,10 +14,10 @@ public class GoRestTestData {
         return dataMap;
     }
 
-    public Map<String, Object> expectedDataMethod(Object meta, Map<String, String> data){
+    public Map<String, Object> expectedDataMethod(Object meta, Map<String, String> dataMap){
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("meta", meta);
-        expectedData.put("data", data);
+        expectedData.put("data", dataMap);
         return expectedData;
     }
 

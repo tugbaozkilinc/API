@@ -4,7 +4,6 @@ import base_urls.PetstoreSwaggerBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.PetstoreSwaggerPojo;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 

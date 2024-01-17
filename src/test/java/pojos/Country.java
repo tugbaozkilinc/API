@@ -1,8 +1,6 @@
 package pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import pojos.States;
-
 import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

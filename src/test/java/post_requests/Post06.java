@@ -6,7 +6,6 @@ import org.junit.Test;
 import pojos.DummyRestApiDataPojo;
 import pojos.DummyRestApiPojo;
 import util.ObjectMapperUtils;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 

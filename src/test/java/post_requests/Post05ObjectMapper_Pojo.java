@@ -5,9 +5,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.JsonPlaceHolderPojo;
 import util.ObjectMapperUtils;
-
 import java.io.IOException;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 

@@ -7,7 +7,6 @@ import pojos.RestfulBookerHerOkuAppBookingDatesPojo;
 import pojos.RestfulBookerHerOkuAppPojo;
 import pojos.RestfulBookerHerOkuAppResponsePojo;
 import util.ObjectMapperUtils;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -18,7 +17,7 @@ public class S01_Post extends RestfulBookerHerOkuAppBaseUrl {
 
     /*
     Given https://restful-booker.herokuapp.com/booking
-                {
+               {
                 "firstname" : "Jim",
                 "lastname" : "Brown",
                 "totalprice" : 111,
@@ -28,11 +27,11 @@ public class S01_Post extends RestfulBookerHerOkuAppBaseUrl {
                     "checkout" : "2019-01-01"
                 },
                 "additionalneeds" : "Breakfast"
-                }
+               }
     When Send post request
     Then status code is 200
     And body should be like
-                {
+               {
                 "bookingid": 4527,
                 "booking": {
                     "firstname": "Jim",
@@ -45,7 +44,7 @@ public class S01_Post extends RestfulBookerHerOkuAppBaseUrl {
                     },
                     "additionalneeds": "Breakfast"
                 }
-                }
+               }
     */
 
     static int bookingId;

@@ -4,29 +4,23 @@ import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Post01 extends JsonPlaceHolderBaseUrl {
 
     /*
-        Given
-           1)  https://jsonplaceholder.typicode.com/todos
-           2)  {
-                 "userId": 55,
-                 "title": "Tidy your room",
-                 "completed": false
-                }
-        When
-            I send POST Request to the Url
-        Then
-            Status code is 201
-        And
-            response body is like {
+        Given  1)  https://jsonplaceholder.typicode.com/todos
+               2)  {
+                   "userId": 55,
+                   "title": "Tidy your room",
+                   "completed": false
+                   }
+        When I send POST Request to the Url
+        Then Status code is 201
+        And response body is like   {
                                     "userId": 55,
                                     "title": "Tidy your room",
                                     "completed": false,
@@ -48,11 +42,11 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
 
         //Send the request get the response
         Response response = given(spec).contentType(ContentType.JSON).body(expectedData).post("/{first}"); //Bu body gonderecegimiz datayi iceriyor, contentType(ContentType.JSON)
-                                                                                                                 //ile content type i belirtiyoruz. Bu sekilde bu datayi java dilinde
-                                                                                                                 //gonderemeyiz, onu ceviren bir library e ihtiyacimiz var. Bunun icin
-                                                                                                                 //pom.xml e json library i ekledik. Daha sonra gson library i ekledik.
-                                                                                                                 //Gson i java objesini json a cevirmek icin serializer olarak kullandik.
-                                                                                                                 //Note: Sonra jackson i ekledik.
+                                                                                                             //ile content type i belirtiyoruz. Bu sekilde bu datayi java dilinde
+                                                                                                             //gonderemeyiz, onu ceviren bir library e ihtiyacimiz var. Bunun icin
+                                                                                                             //pom.xml e json library i ekledik. Daha sonra gson library i ekledik.
+                                                                                                             //Gson i java objesini json a cevirmek icin serializer olarak kullandik.
+                                                                                                             //Note: Sonra jackson i ekledik.
         response.prettyPrint();
 
         //Do assertion

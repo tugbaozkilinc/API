@@ -4,10 +4,8 @@ import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import util.ObjectMapperUtils;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -15,14 +13,10 @@ import static org.testng.AssertJUnit.assertTrue;
 public class Delete01 extends JsonPlaceHolderBaseUrl {
 
     /*
-     Given
-         https://jsonplaceholder.typicode.com/todos/198
-     When
-         I send DELETE Request to the Url
-     Then
-         Status code is 200
-     And
-         Response body is { }
+     Given https://jsonplaceholder.typicode.com/todos/198
+     When I send DELETE Request to the Url
+     Then Status code is 200
+     And Response body is { }
     */
 
     @Test
@@ -39,7 +33,7 @@ public class Delete01 extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        Map<String, String> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class); //import org.codehaus.jackson.map.ObjectMapper;
+        Map<String, String> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class);
         System.out.println("Actual Data: " + actualData);
         assertEquals(200, response.statusCode());
         //1. yol:

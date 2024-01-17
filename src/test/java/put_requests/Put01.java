@@ -6,10 +6,8 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import test_data.JsonPlaceHolderTestData;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 
 public class Put01 extends JsonPlaceHolderBaseUrl {
@@ -70,7 +68,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
+        Response response = given(spec).body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
         Map<String, Object> actualData = response.as(HashMap.class);
         System.out.println("Actual data: " + actualData);

@@ -11,5 +11,5 @@ import org.junit.runners.Suite;
         S04_Get.class
 })
 
-public class Runner { //Oluşturulan classları sırayla çalıştırmak için bir Runner class oluşturuyoruz.
+public class Runner {
 }

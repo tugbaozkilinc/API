@@ -5,11 +5,9 @@ import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 import test_data.JsonPlaceHolderTestData;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 

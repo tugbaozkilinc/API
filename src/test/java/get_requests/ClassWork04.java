@@ -4,20 +4,15 @@ import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
-
 import static io.restassured.RestAssured.given;
 
 public class ClassWork04 extends RestfulBookerHerOkuAppBaseUrl {
 
     /*
-        Given
-            https://restful-booker.herokuapp.com/booking?firstname=John&lastname=Smith
-        When
-            User sends get request to the URL
-        Then
-            Status code is 200
-	  	And
-	  		Among the data there should be someone whose firstname is "John" and lastname is "Smith"
+        Given https://restful-booker.herokuapp.com/booking?firstname=John&lastname=Smith
+        When User sends get request to the URL
+        Then Status code is 200
+	  	And Among the data there should be someone whose firstname is "John" and lastname is "Smith"
     */
 
     @Test

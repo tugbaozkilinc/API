@@ -4,7 +4,6 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
-
 import static util.AuthenticationHerOkuApp.generateTokenHerOkuApp;
 
 public class RestfulBookerHerOkuAppBaseUrl {

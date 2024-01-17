@@ -4,10 +4,8 @@ import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.JsonPlaceHolderTestData;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -15,16 +13,13 @@ import static org.testng.AssertJUnit.assertTrue;
 public class Patch01 extends JsonPlaceHolderBaseUrl {
 
     /*
-       Given
-	       1) https://jsonplaceholder.typicode.com/todos/198
-	       2) {
+       Given 1) https://jsonplaceholder.typicode.com/todos/198
+	         2) {
                  "title": "Wash the dishes"
-               }
-        When
-	 	   I send PATCH Request to the Url
-	    Then
-	   	   Status code is 200
-	   	   And response body is like   {
+                }
+        When I send PATCH Request to the Url
+	    Then Status code is 200
+	   	And response body is like      {
 									    "userId": 10,
 									    "title": "Wash the dishes",
 									    "completed": true,

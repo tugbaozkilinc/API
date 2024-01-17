@@ -1,23 +1,20 @@
 package herokuapp_smoketest;
 
 import base_urls.RestfulBookerHerOkuAppBaseUrl;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.RestfulBookerHerOkuAppBookingDatesPojo;
 import pojos.RestfulBookerHerOkuAppPojo;
 import util.ObjectMapperUtils;
-
 import static herokuapp_smoketest.S01_Post.bookingId;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-import static util.AuthenticationHerOkuApp.generateTokenHerOkuApp;
 
 public class S02_Put extends RestfulBookerHerOkuAppBaseUrl {
 
     /*
     Given https://restful-booker.herokuapp.com/booking/{id}
-                {
+               {
                 "firstname" : "Ali",
                 "lastname" : "Can",
                 "totalprice" : 111,
@@ -27,11 +24,11 @@ public class S02_Put extends RestfulBookerHerOkuAppBaseUrl {
                     "checkout" : "2019-01-01"
                 },
                 "additionalneeds" : "Breakfast"
-                }
+               }
     When send put request
     Then status code should be 200
     Then body should be like
-                {
+               {
                 "firstname": "Ali",
                 "lastname": "Can",
                 "totalprice": 111,
@@ -41,7 +38,7 @@ public class S02_Put extends RestfulBookerHerOkuAppBaseUrl {
                     "checkout": "2019-01-01"
                 },
                 "additionalneeds": "Breakfast"
-                }
+               }
     */
 
     @Test

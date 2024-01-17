@@ -1,7 +1,6 @@
 package gmibank.pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-
 import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

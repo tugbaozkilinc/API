@@ -4,24 +4,20 @@ import base_urls.RegresInApiBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.RegresInApiPojo;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ClassWork02 extends RegresInApiBaseUrl {
 
     /*
-       Given
-            1) https://reqres.in/api/users
-            2) {
+       Given 1) https://reqres.in/api/users
+             2) {
                 "name": "morpheus",
                 "job": "leader"
                 }
-        When
-            I send POST Request to the Url
-        Then
-            Status code is 201
-            And response body should be like {
+       When I send POST Request to the Url
+       Then Status code is 201
+       And response body should be like      {
                                                 "name": "morpheus",
                                                 "job": "leader",
                                                 "id": "496",

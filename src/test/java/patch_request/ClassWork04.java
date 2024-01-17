@@ -7,18 +7,14 @@ import org.testng.asserts.SoftAssert;
 import pojos.RestfulBookerHerOkuAppBookingDatesPojo;
 import pojos.RestfulBookerHerOkuAppPojo;
 import util.ObjectMapperUtils;
-
 import static io.restassured.RestAssured.given;
 
 public class ClassWork04 extends RestfulBookerHerOkuAppBaseUrl {
 
     /*
-        Given
-	            https://restful-booker.herokuapp.com/booking/22
-        When
-		 		I send GET Request to the URL
-		Then
-		 		Status code is 200
+        Given https://restful-booker.herokuapp.com/booking/22
+        When I send GET Request to the URL
+		Then Status code is 200
                   {
                     "firstname": "John",
                     "lastname": "Smith",

@@ -5,6 +5,10 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DummyRestApiDeletePojo {
 
+    //@JsonIgnoreProperties(ignoreUnknown = true) anotasyonu, genellikle Java'nın Jackson kütüphanesiyle kullanılır. Bu anotasyon, JSON'dan Java nesnelerine
+    //dönüşüm sırasında bilinmeyen özelliklerin varlığını görmezden gelmek için kullanılır. Yani, bir JSON nesnesinde Java sınıfınızda tanımlanmamış ekstra alanlar varsa,
+    //bu anotasyon sayesinde bu bilinmeyen alanlar dönüşüm sırasında hata üretmez ve sadece tanımlı alanlar dönüştürülür.
+
     private String status;
     private String data;
     private String message;

@@ -4,24 +4,18 @@ import base_urls.GoRestBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.GoRestTestData;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get10 extends GoRestBaseUrl {
 
     /*
-        Given
-            https://gorest.co.in/public/v1/users/149679
-        When
-            User send GET Request to the URL
-        Then
-            Status Code should be 200
-        And
-            Response body should be like
+        Given https://gorest.co.in/public/v1/users/149679
+        When User send GET Request to the URL
+        Then Status Code should be 200
+        And Response body should be like
         {
          "meta": null,
          "data": {

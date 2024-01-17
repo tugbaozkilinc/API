@@ -3,7 +3,6 @@ package get_requests;
 import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import static io.restassured.RestAssured.given;
 
 public class Get01 extends RestfulBookerHerOkuAppBaseUrl {
@@ -17,17 +16,17 @@ public class Get01 extends RestfulBookerHerOkuAppBaseUrl {
     @Test
     public void name() {
         //Note: Endpoint Swagger documentation dan gelir, postman de endpoint in manual olarak calisip calismadigina bakilir, sonra test otomasyona dokulur.
-        //i) Set the URL
+        //Set the URL
         spec.pathParams("first", "booking", "second", 55);
 
-        //ii) Set the expected data
+        //Set the expected data
 
-        //iii) Send the request and get the response
-        Response response = given().when().spec(spec).get("/{first}/{second}");
+        //Send the request and get the response
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
-        //iv) Do assertion
-        response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK"); //response.then()..
+        //Do assertion
+        response.then().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
     }
 
 }

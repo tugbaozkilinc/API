@@ -3,7 +3,6 @@ package herokuapp_smoketest;
 import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import static herokuapp_smoketest.S01_Post.bookingId;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
@@ -26,7 +25,7 @@ public class S04_Get extends RestfulBookerHerOkuAppBaseUrl {
         String expectedData = "Not Found";
 
         //Send the request and get the response
-        Response response = given().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

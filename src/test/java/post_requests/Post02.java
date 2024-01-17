@@ -4,10 +4,8 @@ import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.HerOkuAppTestData;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 

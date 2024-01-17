@@ -6,12 +6,9 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.States;
 import util.ObjectMapperUtils;
-
 import java.util.ArrayList;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-import static util.AuthenticationGmiBank.generateTokenGmi;
 
 public class ClassWork03 extends GmiBankBaseUrl {
 

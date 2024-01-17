@@ -4,10 +4,8 @@ import base_urls.DummyRestApiBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import java.util.Collections;
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;

@@ -8,9 +8,7 @@ import gmibank.pojos.User;
 import io.restassured.response.Response;
 import org.junit.Test;
 import util.ObjectMapperUtils;
-
 import java.util.ArrayList;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 import static util.AuthenticationGmiBank.generateTokenGmi;
@@ -18,14 +16,10 @@ import static util.AuthenticationGmiBank.generateTokenGmi;
 public class GetCustomer extends GmiBankBaseUrl {
 
     /*
-    Given
-        https://www.gmibank.com/api/tp-customers/110472
-    When
-        User sends Get request
-    Then
-        Status code should be 200
-    And
-        Response body should be like:
+    Given https://www.gmibank.com/api/tp-customers/110472
+    When User sends Get request
+    Then Status code should be 200
+    And Response body should be like:
     {
     "id": 110472,
     "firstName": "Melva",

@@ -4,22 +4,17 @@ import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.HerOkuAppTestData;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get09 extends RestfulBookerHerOkuAppBaseUrl {
 
     /*
-      Given
-          https://restful-booker.herokuapp.com/booking/794
-      When
-          I send GET Request to the url
-      Then
-          Response body should be like that;
+      Given https://restful-booker.herokuapp.com/booking/794
+      When I send GET Request to the url
+      Then Response body should be like that;
            {
             "firstname": "John",
             "lastname": "Smith",

@@ -5,21 +5,16 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.RestfulBookerHerOkuAppBookingDatesPojo;
 import pojos.RestfulBookerHerOkuAppPojo;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get12 extends RestfulBookerHerOkuAppBaseUrl {
 
     /*
-        Given
-            https://restful-booker.herokuapp.com/booking/392
-        When
- 		    I send GET Request to the URL
- 	    Then
- 		    Status code is 200
- 		And
- 		    Response body is like:
+        Given https://restful-booker.herokuapp.com/booking/392
+        When I send GET Request to the URL
+ 	    Then Status code is 200
+ 		And Response body is like:
  		               {
                         "firstname": "Guoqiang",
                         "lastname": "Combs",

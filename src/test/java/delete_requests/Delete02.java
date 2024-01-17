@@ -5,7 +5,6 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.DummyRestApiDeletePojo;
 import util.ObjectMapperUtils;
-
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
@@ -44,6 +43,6 @@ public class Delete02 extends DummyRestApiBaseUrl {
     }
 
     //@JsonIgnoreProperties(ignoreUnknown = true) Bu annotation, belirtilen class ta tanımlanmamış bir JSON özelliği ile karşılaşıldığında Jackson'ın bu özellikleri yoksaymasına
-    //veya görmezden gelmesine neden olur. Jackson'un bu belirsiz özellikleri görmezden gelmesine ve Java objesinin oluşturulmasını tamamlamasına izin verir.
+    //veya görmezden gelmesini saglar. Jackson'un bu belirsiz özellikleri görmezden gelmesine ve Java objesinin oluşturulmasını tamamlamasına izin verir.
 
 }

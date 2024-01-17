@@ -3,7 +3,6 @@ package herokuapp_smoketest;
 import base_urls.RestfulBookerHerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import static herokuapp_smoketest.S01_Post.bookingId;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;

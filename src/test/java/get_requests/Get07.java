@@ -4,19 +4,15 @@ import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get07 extends JsonPlaceHolderBaseUrl {
 
     /*
-      Given
-          https://jsonplaceholder.typicode.com/todos
-      When
-          I send GET Request to the URL
+      Given https://jsonplaceholder.typicode.com/todos
+      When I send GET Request to the URL
       Then
           1)Status code is 200
           2)Print all ids greater than 190 on the console
@@ -35,7 +31,7 @@ public class Get07 extends JsonPlaceHolderBaseUrl {
         //Set the expected data
 
         //Send the request and get the response
-        Response response = given().spec(spec).get("/{first}");
+        Response response = given(spec).get("/{first}");
         response.prettyPrint();
 
         //Do assertion

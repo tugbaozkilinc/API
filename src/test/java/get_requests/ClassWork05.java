@@ -6,22 +6,16 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-
 import static io.restassured.RestAssured.given;
 
 public class ClassWork05 extends RegresInApiBaseUrl {
 
     /*
-        Given
-          https://reqres.in/api/unknown/3
-        When
-            User send a GET request to the URL
-        Then
-            HTTP Status Code should be 200
-        And
-            Response content type is “application/json; charset=utf-8”
-        And
-            Response body should be like; (Soft Assertion)
+        Given https://reqres.in/api/unknown/3
+        When User send a GET request to the URL
+        Then HTTP Status Code should be 200
+        And Response content type is “application/json; charset=utf-8”
+        And Response body should be like; (Soft Assertion)
         {
         "data": {
             "id": 3,

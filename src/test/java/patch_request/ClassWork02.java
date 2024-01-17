@@ -4,23 +4,17 @@ import base_urls.AutomationExerciseBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ClassWork02 extends AutomationExerciseBaseUrl {
 
     /*
-    Given
-		https://automationexercise.com/api/productsList
-	When
-		User sends Get request
-	Then
-		Assert that number of "Women" usertype is 12
-	And
-	    Status code is 200
+    Given https://automationexercise.com/api/productsList
+	When User sends Get request
+	Then Assert that number of "Women" usertype is 12
+	And  Status code is 200
     */
 
     @Test

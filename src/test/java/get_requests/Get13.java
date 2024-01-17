@@ -5,21 +5,16 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.GoRestDataPojo;
 import pojos.GoRestPojo;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get13 extends GoRestBaseUrl {
 
     /*
-        Given
-            https://gorest.co.in/public/v1/users/247158
-        When
-            User send GET Request to the URL
-        Then
-            Status Code should be 200
-        And
-            Response body should be like
+        Given https://gorest.co.in/public/v1/users/247158
+        When User send GET Request to the URL
+        Then Status Code should be 200
+        And Response body should be like
           {
             "meta": null,
             "data": {
@@ -43,7 +38,7 @@ public class Get13 extends GoRestBaseUrl {
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).get("/{first}/{second}");
+        Response response = given(spec).get("/{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

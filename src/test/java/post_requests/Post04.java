@@ -6,7 +6,6 @@ import org.junit.Test;
 import pojos.RestfulBookerHerOkuAppBookingDatesPojo;
 import pojos.RestfulBookerHerOkuAppPojo;
 import pojos.RestfulBookerHerOkuAppResponsePojo;
-
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
