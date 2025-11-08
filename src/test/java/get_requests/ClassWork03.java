@@ -33,8 +33,9 @@ public class ClassWork03 extends RegresInApiBaseUrl {
 
         //Do assertion
         response.then().statusCode(200).contentType(ContentType.JSON).body("data.email", equalTo("janet.weaver@reqres.in"),
-                "data.first_name", equalTo("Janet"), "data.last_name", equalTo("Weaver"), "support.text",
-                equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+                                                                       "data.first_name", equalTo("Janet"),
+                                                                                "data.last_name", equalTo("Weaver"),
+                                                                                "support.text", equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
     }
 
 }

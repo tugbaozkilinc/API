@@ -12,10 +12,17 @@ public class Get01 extends RestfulBookerHerOkuAppBaseUrl {
     //Then HTTP Status Code should be 200
     //And Content Type should be application/json
     //And Status Line should be HTTP/1.1 200 OK
+    /*
+    Bileşen	    Nerede Görünür? 	               Açıklama
+    HTTP/1.1	Tam görünmez (Protokol bilgisi)	   Ancak arka planda HTTP 1.1 kullanıldığı varsayılır
+    200	        Sağ alt köşede (yeşil kutucuk)	   HTTP Status Code – ✅ Başarılı
+    OK	        Aynı kutucukta	                   Status mesajı – "OK"
+    */
 
     @Test
     public void name() {
-        //Note: Endpoint Swagger documentation dan gelir, postman de endpoint in manual olarak calisip calismadigina bakilir, sonra test otomasyona dokulur.
+        //Note: Endpoint(Endpoint, bir API'nin belirli bir işlevini gerçekleştiren URL adresidir.) Swagger documentation dan gelir,
+        //postman de endpoint in manual olarak calisip calismadigina bakilir, sonra test otomasyona dokulur.
         //Set the URL
         spec.pathParams("first", "booking", "second", 55);
 

@@ -13,8 +13,10 @@ public class AuthenticationHerOkuApp {
         Map<String, String> tokenBody = new HashMap<>();
         tokenBody.put("username", "admin");
         tokenBody.put("password", "password123");
-        Response response = given().when().contentType(ContentType.JSON).body(tokenBody).post(url);
-        return response.jsonPath().getString("token");
+        Response response = given().when().contentType(ContentType.JSON).body(tokenBody).post(url); //response: REST Assured’in Response objesi.
+
+        return response.jsonPath().getString("token"); //jsonPath(): Bu method gelen yanıtı JSON formatında yorumlamanı sağlar.
+                                                            //getString("token"): JSON’daki "token" anahtarının karşılığı olan (String)değeri verir.
     }
 
 }

@@ -35,8 +35,8 @@ public class ClassWork04 extends RestfulBookerHerOkuAppBaseUrl {
         spec.pathParams("first", "booking", "second", 22);
 
         //Set the expected data
-        RestfulBookerHerOkuAppBookingDatesPojo object = new RestfulBookerHerOkuAppBookingDatesPojo("2018-01-01", "2019-01-01");
-        RestfulBookerHerOkuAppPojo expectedData = new RestfulBookerHerOkuAppPojo("John", "Smith", 111, true, object, "Breakfast");
+        RestfulBookerHerOkuAppBookingDatesPojo bookingDates = new RestfulBookerHerOkuAppBookingDatesPojo("2018-01-01", "2019-01-01");
+        RestfulBookerHerOkuAppPojo expectedData = new RestfulBookerHerOkuAppPojo("John", "Smith", 111, true, bookingDates, "Breakfast");
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
@@ -52,8 +52,8 @@ public class ClassWork04 extends RestfulBookerHerOkuAppBaseUrl {
         softAssert.assertEquals(actualData.getLastname(), expectedData.getLastname());
         softAssert.assertEquals(actualData.getTotalprice(), expectedData.getTotalprice());
         softAssert.assertEquals(actualData.getDepositpaid(), expectedData.getDepositpaid());
-        softAssert.assertEquals(actualData.getBookingdates().getCheckin(), object.getCheckin());
-        softAssert.assertEquals(actualData.getBookingdates().getCheckout(), object.getCheckout());
+        softAssert.assertEquals(actualData.getBookingdates().getCheckin(), bookingDates.getCheckin());
+        softAssert.assertEquals(actualData.getBookingdates().getCheckout(), bookingDates.getCheckout());
         softAssert.assertEquals(actualData.getAdditionalneeds(), expectedData.getAdditionalneeds());
         softAssert.assertAll();
     }

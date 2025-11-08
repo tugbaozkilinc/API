@@ -42,7 +42,7 @@ public class Delete02 extends DummyRestApiBaseUrl {
         assertEquals(expectedData.getStatus(), actualData.getStatus());
     }
 
-    //@JsonIgnoreProperties(ignoreUnknown = true) Bu annotation, belirtilen class ta tanımlanmamış bir JSON özelliği ile karşılaşıldığında Jackson'ın bu özellikleri yoksaymasına
+    //@JsonIgnoreProperties(ignoreUnknown = true) Bu annotation, belirtilen class'ta tanımlanmamış bir JSON özelliği ile karşılaşıldığında Jackson'ın bu özellikleri yoksaymasına
     //veya görmezden gelmesini saglar. Jackson'un bu belirsiz özellikleri görmezden gelmesine ve Java objesinin oluşturulmasını tamamlamasına izin verir.
 
 }

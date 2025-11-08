@@ -36,7 +36,8 @@ public class ClassWork05 extends DummyRestApiBaseUrl {
         response.jsonPath().prettyPrint();
 
         //Do assertion
-        response.then().statusCode(200).body("data.id", hasSize(24), "data.employee_name", hasItems("Tiger Nixon", "Garrett Winters"));
+        response.then().statusCode(200).body("data.id", hasSize(24),
+                                         "data.employee_name", hasItems("Tiger Nixon", "Garrett Winters"));
         JsonPath jsonPath = response.jsonPath();
         List<Integer> ageList = jsonPath.getList("data.employee_age");
         Collections.sort(ageList);

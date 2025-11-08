@@ -46,7 +46,9 @@ public class ClassWork03 extends PetstoreSwaggerBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        response.then().statusCode(200).body("code", equalTo(200), "type", equalTo("unknown"), "message", equalTo("1"));
+        response.then().statusCode(200).body("code", equalTo(200),
+                                         "type", equalTo("unknown"),
+                                                  "message", equalTo("1"));
     }
 
 }

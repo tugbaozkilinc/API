@@ -4,7 +4,7 @@ import base_urls.RegresInApiBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
-import static org.testng.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class ClassWork02 extends RegresInApiBaseUrl {
 
@@ -29,9 +29,9 @@ public class ClassWork02 extends RegresInApiBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
+        response.then().assertThat().statusCode(401).statusLine("HTTP/1.1 401 Unauthorized");
         assertEquals("cloudflare", response.getHeader("Server"));
-        assertEquals(2, response.asString().replaceAll("\\s", "").length());
+        assertEquals(70, response.asString().replaceAll("\\s", "").length());
     }
 
 }

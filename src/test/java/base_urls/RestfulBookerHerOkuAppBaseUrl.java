@@ -11,8 +11,11 @@ public class RestfulBookerHerOkuAppBaseUrl {
     protected RequestSpecification spec;
     @Before
     public void setUp(){
-        spec = new RequestSpecBuilder().addHeader("Cookie", "token=" + generateTokenHerOkuApp()).setContentType(ContentType.JSON).
-                                        setBaseUri("https://restful-booker.herokuapp.com").build();
+        spec = new RequestSpecBuilder()
+                .addHeader("Cookie", "token=" + generateTokenHerOkuApp())
+                .setContentType(ContentType.JSON)
+                .setBaseUri("https://restful-booker.herokuapp.com")
+                .build();
     }
 
 }

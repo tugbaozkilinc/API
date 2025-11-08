@@ -44,33 +44,32 @@ public class Get06 extends RestfulBookerHerOkuAppBaseUrl {
 
         //Do assertion
         //1. yol:
-        response.then().statusCode(200).contentType("application/json").
-                 body("firstname", equalTo("John"),
-                         "lastname", equalTo("Smith"),
-                         "totalprice", equalTo(111),
-                         "depositpaid", equalTo(true),
-                         "bookingdates.checkin", equalTo("2018-01-01"),
-                         "bookingdates.checkout", equalTo("2019-01-01"),
-                         "additionalneeds", equalTo("Breakfast"));
+        response.then().statusCode(200).contentType("application/json").body("firstname", equalTo("Josh"),
+                                                                            "lastname", equalTo("Allen"),
+                                                                                     "totalprice", equalTo(111),
+                                                                                     "depositpaid", equalTo(true),
+                                                                                     "bookingdates.checkin", equalTo("2018-01-01"),
+                                                                                     "bookingdates.checkout", equalTo("2019-01-01"),
+                                                                                     "additionalneeds", equalTo("super bowls"));
         //2.yol:
         JsonPath jsonPath = response.jsonPath();
-        assertEquals("John", jsonPath.getString("firstname"));
-        assertEquals("Smith", jsonPath.getString("lastname"));
+        assertEquals("Josh", jsonPath.getString("firstname"));
+        assertEquals("Allen", jsonPath.getString("lastname"));
         assertEquals(111, jsonPath.getInt("totalprice"));
         assertTrue(jsonPath.getBoolean("depositpaid"));
         assertEquals("2018-01-01", jsonPath.getString("bookingdates.checkin"));
         assertEquals("2019-01-01", jsonPath.getString("bookingdates.checkout"));
-        assertEquals("Breakfast", jsonPath.getString("additionalneeds"));
+        assertEquals("super bowls", jsonPath.getString("additionalneeds"));
 
         //3. yol: TestNG Soft Assert
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(jsonPath.getString("firstname"), "John", "firstname doesn't match");
-        softAssert.assertEquals(jsonPath.getString("lastname"), "Smith", "lastname doesn't match");
+        softAssert.assertEquals(jsonPath.getString("firstname"), "Josh", "firstname doesn't match");
+        softAssert.assertEquals(jsonPath.getString("lastname"), "Allen", "lastname doesn't match");
         softAssert.assertEquals(jsonPath.getInt("totalprice"), 111, "totalprice doesn't match");
         softAssert.assertTrue(jsonPath.getBoolean("depositpaid"), "depositpaid doesn't match");
         softAssert.assertEquals(jsonPath.getString("bookingdates.checkin"), "2018-01-01", "checkin doesn't match");
         softAssert.assertEquals(jsonPath.getString("bookingdates.checkout"), "2019-01-01", "checkout doesn't match");
-        softAssert.assertEquals(jsonPath.getString("additionalneeds"), "Breakfast", "additionalneeds doesn't match");
+        softAssert.assertEquals(jsonPath.getString("additionalneeds"), "super bowls", "additionalneeds doesn't match");
         softAssert.assertAll();
     }
 

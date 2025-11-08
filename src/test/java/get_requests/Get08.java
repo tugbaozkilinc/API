@@ -38,7 +38,7 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         JsonPlaceHolderTestData jsonPlaceHolderTestData = new JsonPlaceHolderTestData();
         Map<String, Object> expectedData = jsonPlaceHolderTestData.expectedDataMethod(1, "quis ut nam facilis et officia qui", false);
         expectedData.put("id", 2);
-        expectedData.put("Via", "1.1 vegur");
+        expectedData.put("Via", "2.0 heroku-router");
         expectedData.put("Server", "cloudflare");
         System.out.println("Expected Data: " + expectedData);
 
@@ -47,8 +47,9 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        Map<String, Object> actualData = response.as(HashMap.class);
-        //Map<String, Object> actualData = new ObjectMapper().readValue(response.asString(), HashMap.class);
+        Map<String, Object> actualData = response.as(HashMap.class); //actualData, JSON objesinin Java karşılığı olan bir Map<String, Object> haline geliyor.
+        //Map<String, Object> actualData = new ObjectMapper().readValue(response.asString(), HashMap.class); //Bu yöntem de aynı işi yapar.
+        //Once response.asString() ile response metni alınıyor. Sonra ObjectMapper ile JSON -> Java objesine dönüştürülüyor.
         System.out.println("Actual Data: " + actualData);
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.get("userId"), actualData.get("userId"));

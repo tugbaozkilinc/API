@@ -33,16 +33,16 @@ public class Get02 extends RestfulBookerHerOkuAppBaseUrl {
 
         //Do assertion
         response.then().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
-        assertTrue(response.asString().contains("Not Found"));
-        assertFalse(response.asString().contains("TechProEd"));
-        assertEquals("Cowboy", response.getHeader("Server"));
+        assertTrue(response.asString().contains("Not Found")); //response.jsonPath() sadece geçerli bir JSON yanıtı olduğunda çalışır.
+        assertFalse(response.asString().contains("TechProEd")); //Server düzgün bir JSON değil, düz metin döndürüyor.
+        assertEquals("Heroku", response.getHeader("Server"));
     }
 
     //Exception alirsan bunu kullan.
     /*
-      String endPoint = "https://restful-booker.herokuapp.com/booking/0";
       try {
              Response response = given(spec).get("/{first}/{second}");
+             response.prettyPrint();
       } catch (Exception e) {
              assert e.getMessage().contains("404");
              assert e.getMessage().contains("Not Found");

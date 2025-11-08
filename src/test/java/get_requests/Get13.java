@@ -33,8 +33,8 @@ public class Get13 extends GoRestBaseUrl {
         spec.pathParams("first", "users", "second", 247152);
 
         //Set the expected data
-        GoRestDataPojo object = new GoRestDataPojo("Ujjwal Bandopadhyay", "ujjwal_bandopadhyay@mueller-schoen.net", "male", "active");
-        GoRestPojo expectedData = new GoRestPojo(null, object);
+        GoRestDataPojo data = new GoRestDataPojo("Ujjwal Bandopadhyay", "ujjwal_bandopadhyay@mueller-schoen.net", "male", "active");
+        GoRestPojo expectedData = new GoRestPojo(null, data);
         System.out.println("Expected Data: " + expectedData);
 
         //Send the request and get the response
@@ -45,10 +45,10 @@ public class Get13 extends GoRestBaseUrl {
         GoRestPojo actualData = response.as(GoRestPojo.class);
         System.out.println("Actual Data: " + actualData);
         assertEquals(200, response.statusCode());
-        assertEquals(object.getName(), actualData.getData().getName());
-        assertEquals(object.getEmail(), actualData.getData().getEmail());
-        assertEquals(object.getGender(), actualData.getData().getGender());
-        assertEquals(object.getStatus(), actualData.getData().getStatus());
+        assertEquals(data.getName(), actualData.getData().getName());
+        assertEquals(data.getEmail(), actualData.getData().getEmail());
+        assertEquals(data.getGender(), actualData.getData().getGender());
+        assertEquals(data.getStatus(), actualData.getData().getStatus());
         assertEquals(expectedData.getMeta(), actualData.getMeta());
     }
 

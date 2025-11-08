@@ -1,13 +1,13 @@
 package gmibank.pojos;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
 
-    private int id;
+    private Integer id;
     private String description;
-    private int balance;
+    private Integer balance;
     private String accountType;
     private String accountStatusType;
     private String createDate;
@@ -18,7 +18,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(int id, String description, int balance, String accountType, String accountStatusType, String createDate, String closedDate, Object employee, Object accountlogs) {
+    public Account(Integer id, String description, Integer balance, String accountType, String accountStatusType, String createDate, String closedDate, Object employee, Object accountlogs) {
         this.id = id;
         this.description = description;
         this.balance = balance;

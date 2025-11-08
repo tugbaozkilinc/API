@@ -31,6 +31,11 @@ public class Get05 extends RestfulBookerHerOkuAppBaseUrl {
         //Do assertion
         response.then().statusCode(200);
         assertTrue(response.asString().contains("bookingid"));
+        /*
+        response.asString() metodu, response body'nin tamamını bir String (düz metin) olarak döner.
+        Yani JSON, Java tarafında aşağıdaki tek satırlık string gibi görünür:
+        "[{\"bookingid\":2811},{\"bookingid\":3094},{\"bookingid\":2810}]"
+        */
     }
 
 }

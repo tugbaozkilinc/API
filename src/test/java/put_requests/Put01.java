@@ -1,7 +1,6 @@
 package put_requests;
 
 import base_urls.JsonPlaceHolderBaseUrl;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
@@ -45,7 +44,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         System.out.println("Expected data: " + expectedData);
 
         //Send the request and get the response
-        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
+        Response response = given(spec).body(expectedData).put("/{first}/{second}");
         response.prettyPrint();
         Map<String, Object> actualData = response.as(HashMap.class);
         System.out.println("Actual data: " + actualData);
